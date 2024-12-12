@@ -1,6 +1,7 @@
 package app;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class L5PR {
@@ -15,6 +16,11 @@ public class L5PR {
         String strDog = "Dog";
         System.out.println(countOccurrences(list , strDog));
 
+        int[] numbers = {1, 2, 3};
+
+        System.out.println("Array" + Arrays.toString(numbers));
+        System.out.println("List" + toList(numbers));
+
 
         }
         public static int countOccurrences(List<String> list, String str) {
@@ -26,4 +32,14 @@ public class L5PR {
         }
         return count;
         }
+
+        public static List<Integer> toList(int[] numbers) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < numbers.length; i++) {
+            list.add(numbers[i]);
+        }
+        return list;
+        }
+
+
     }
