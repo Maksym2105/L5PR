@@ -26,6 +26,13 @@ public class L5PR {
         System.out.println();
         calcOccurence(petsList);
 
+        System.out.println();
+        List<String> occurrences = findOccurance(petsList);
+        occurrences.forEach(System.out::println);
+
+
+
+
 
     }
 
@@ -73,6 +80,25 @@ public class L5PR {
                 proceedWords.add(pet);
             }
         }
+    }
+
+    public static List<String> findOccurance(List<String> petsList) {
+       List<String> proceedWords = new ArrayList<>();
+       List<String> result = new ArrayList<>();
+
+       for(String pet : petsList) {
+           if(!proceedWords.contains(pet)) {
+               int count = 0;
+               for(String word : petsList) {
+                   if(word.equals(pet)) {
+                       count++;
+                   }
+               }
+               result.add("{name: \"" + pet + "\", occurrence: " + count + "}");
+               proceedWords.add(pet);
+           }
+       }
+       return result;
     }
 
     }
