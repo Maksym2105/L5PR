@@ -1,5 +1,8 @@
 package app;
 
+import app.phonebook.PhoneDirectory;
+import app.phonebook.Record;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,6 +33,21 @@ public class L5PR {
         List<String> occurrences = findOccurance(petsList);
         occurrences.forEach(System.out::println);
 
+        System.out.println();
+        PhoneDirectory phoneDirectory = new PhoneDirectory();
+
+        phoneDirectory.add(new Record("Mary Sue" , "198-345-6782"));
+        phoneDirectory.add(new Record("Mary Sue" , "198-345-6783"));
+        phoneDirectory.add(new Record("John Smith" , "198-790-9484"));
+
+        Record foundRecord = phoneDirectory.find("Mary Sue");
+        System.out.println("Found record: " + foundRecord);
+
+        List<Record> records = phoneDirectory.findAll("Mary Sue");
+        System.out.println("Found records " + records);
+
+        Record notFound = phoneDirectory.find("Andy Moe");
+        System.out.println("Not found record: " + notFound);
 
 
 
